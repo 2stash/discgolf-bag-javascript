@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css"
+      integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK"
+      crossorigin="anonymous"
+    />
+
+    <title>Disc Golf Bag Sharer</title>
+  </head>
+  <body>
+    <!-- bootstrap 4 Nav bar Start-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+      <a class="navbar-brand" href="#">DGBS </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarColor01"
+        aria-controls="navbarColor01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Featured</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="text"
+            placeholder="Search"
+          />
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+    <!-- bootstrap 4 Nav bar end-->
+
+    <!-- Modal start ---------------------->
+    <div
+      class="modal fade"
+      id="imgModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input id="img-1" type="image" src="./assets/images/5xzforce_1.png" class="img-fluid img-thumbnail" width="24%"/>
+            <input id="img-2" type="image" src="./assets/images/scbuzzz.moon_max-br_1.jpg" class="img-fluid img-thumbnail" width="24%"/>
+            <input id="img-3" type="image" src="./assets//images/tivulture_1.jpg" class="img-fluid img-thumbnail" width="24%"/>
+            <input id="img-1" type="image" src="./assets/images/tizone_max-dk_1.jpg" class="img-fluid img-thumbnail" width="24%"/>
+            
+
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button id="modal-save-btn"type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal end ---------------------->
+
+    <br />
+    <div class="container">
+      <!-- main body row --------------------------------------------- -->
+      <div class="row">
+        <!-- Disc add / edit card Start ------------------------------------- -->
+        <div class="col-sm-12 col-md-4">
+          <div class="card text-white bg-info mb-3">
+            <div class="card-header">Add Disc</div>
+            <div class="card-body">
+              <form class="">
+                <div class="">
+                  <div class="form-group">
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Type in Disc Name"
+                      id="disc-name"
+                    />
+                    <label for="disc-name">Name</label>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Type in Manufacturer"
+                      id="disc-manufacturer"
+                    />
+                    <label for="disc-manufacturer">Brand</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <select id="disc-type" class="form-control">
+                    <option value="Distance Driver">Distance Driver</option>
+                    <option value="Fairway Driver">Fairway Driver</option>
+                    <option value="Midrange">Midrange</option>
+                    <option value="Putter">Putter</option>
+                  </select>
+                  <label for="disc-type">Type</label>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-sm-8">
+                    <img
+                      id="disc-img"
+                      src="assets/images/tizone_max-dk_1.jpg"
+                      width="100"
+                    />
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <button
+                      data-toggle="modal"
+                      data-target="#imgModal"
+                      class="btn btn-primary"
+                    >
+                      Select IMG
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-sm-3">
+                    <input
+                      class="form-control"
+                      type="number"
+                      placeholder="14"
+                      id="disc-speed"
+                    />
+                    <label for="disc-speed">Speed</label>
+                  </div>
+                  <div class="form-group col-sm-3">
+                    <input
+                      class="form-control"
+                      type="number"
+                      placeholder="5"
+                      id="disc-glide"
+                    />
+                    <label for="disc-glide">Glide</label>
+                  </div>
+                  <div class="form-group col-sm-3">
+                    <input
+                      class="form-control"
+                      type="number"
+                      placeholder="-1"
+                      id="disc-turn"
+                    />
+                    <label for="disc-turn">Turn</label>
+                  </div>
+                  <div class="form-group col-sm-3">
+                    <input
+                      class="form-control"
+                      type="number"
+                      placeholder="1"
+                      id="disc-fade"
+                    />
+                    <label for="disc-fade">Fade</label>
+                  </div>
+
+                  <button class="add-btn btn-success btn-block">
+                    <i class="fa fa-plus"></i> Add Disc
+                  </button>
+                  <button class="update-btn btn-warning">
+                    <i class="fa fa-pencil-square-o"></i> Update Disc
+                  </button>
+                  <button class="delete-btn btn-danger">
+                    <i class="fa fa-remove"></i> Delete Disc
+                  </button>
+                  <button class="back-btn btn-light" type="button">
+                    <i class="fa fa-chevron-circle-left"></i> Back
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Disc add / edit card End ------------------------------------- -->
+
+        <!-- Disc inventory div Start--------------------------------------------------------------------------- -->
+        <div class="col-sm-12 col-md-8">
+          <!-- Disc Count -->
+          <div class="d-flex flex-row row-h1 mb-2">
+            <h3 class="center-align d-inline">
+              Total Discs: <span class="total-discs">0</span>
+            </h3>
+            <button type="button" class="btn btn-danger clear-btn ml-3">
+              Clear Bag
+            </button>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr class="table-info">
+                <th scope="col">Name</th>
+                <th scope="col">Manufacturer</th>
+                <th scope="col">Type</th>
+                <th scope="col">Speed</th>
+                <th scope="col">Glide</th>
+                <th scope="col">Turn</th>
+                <th scope="col">Fade</th>
+                <th scope="col">IMG</th>
+                <th scope="col">Edit</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+        <!-- Disc inventory div End--------------------------------------------------------------------------- -->
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("#myModal").on("shown.bs.modal", function () {
+        $("#myInput").trigger("focus");
+      });
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>
